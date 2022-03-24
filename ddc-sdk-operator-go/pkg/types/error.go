@@ -27,6 +27,7 @@ var (
 
 	DDCInfoError      = register(DDC, "1010", "the length of amounts and ddcURIs do not match")
 	OwnersDDCIdsError = register(DDC, "1011", "the length of owners and ddcIds do not match")
+	BatchInfoNumError = register(DDC, "1012", "the number of the input params is inconsistent")
 
 	DDCIdError  = register(DDC, "1016", "ddcId is wrong")
 	DDCURIError = register(DDC, "1017", "ddcURI cannot be empty")

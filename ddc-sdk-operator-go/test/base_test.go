@@ -19,3 +19,6 @@ func TestGetDDCId(t *testing.T) {
 func TestCreateAccount(t *testing.T) {
 	fmt.Println(client.CreateAccount())
 }
+func TestAddress(t *testing.T) {
+	fmt.Println(common.HexToAddress("0") == common.HexToAddress("0"))
+}

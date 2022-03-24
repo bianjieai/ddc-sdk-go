@@ -48,6 +48,33 @@ func (a *AuthorityService) AddAccountByOperator(opts *bind.TransactOpts, account
 	return signedTx, nil
 }
 
+// AddBatchAccountByOperator
+// @Description: 运营方可以通过调用该方法直接对平台方或平台方的终端用户进行批量创建
+// @receiver a
+// @param opts opts.Price和opts.Signer为空时，默认使用初始化client时set的price和signer
+// @param accounts DDC链账户地址集合
+// @param accNames DDC账户对应的账户名称集合
+// @param accDIDs DDC账户对应的DID信息集合
+// @param leaderDIDs 该账户对应的上级账户的DID集合
+// @return signedTx 签名好的交易
+// @return error
+func (a *AuthorityService) AddBatchAccountByOperator(opts *bind.TransactOpts, accounts []common.Address, accNames, accDIDs, leaderDIDs []string) (signedTx *types.Transaction, err error) {
+
+	if len(accounts)^len(accNames)^len(accNames)^len(leaderDIDs) != 0 {
+		return nil, types2.BatchInfoNumError
+	}
+	//for _
+
+	a.SetOpts(opts)
+	signedTx, err = handler.GetAuthority().AddBatchAccountByOperator(opts, accounts, accNames, accDIDs, leaderDIDs)
+	if err != nil {
+		log.Error.Printf("failed to execute AddAccountByOperator: %v", err.Error())
+		return nil, types2.NewSDKError(types2.TransactError.Error(), err.Error())
+	}
+
+	return signedTx, nil
+}
+
 // GetAccount
 // @Description: 运营方、平台方以及终端用户可以通过调用该方法进行DDC账户信息的查询
 // @receiver a
