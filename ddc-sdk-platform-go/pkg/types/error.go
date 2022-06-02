@@ -12,12 +12,12 @@ var (
 	OwnerAccountError    = register(DDC, "1028", "owner account is not a standard address format")
 	SenderAccountError   = register(DDC, "1029", "sender account is not a standard address format")
 	OperatorAccountError = register(DDC, "1030", "owner account is not a standard address format")
-	AccountsError        = register(DDC, "1031", "accounts must not be empty")
+	AccountListError     = register(DDC, "1031", "accounts must not be empty")
 	AccNamesError        = register(DDC, "1032", "accNames must not be empty")
 	AccDIDsError         = register(DDC, "1033", "accDIDs must not be empty")
 	LeaderDIDsError      = register(DDC, "1034", "LeaderDIDs must not be empty")
 	ToListError          = register(DDC, "1035", "toList must not be empty")
-	AmountsError         = register(DDC, "1036", "amounts must not be empty")
+	AmountListError      = register(DDC, "1036", "amounts must not be empty")
 	NameError            = register(DDC, "1037", "name must not be null")
 	SymbolError          = register(DDC, "1038", "symbol must not be null")
 
@@ -27,6 +27,7 @@ var (
 
 	DDCInfoError      = register(DDC, "1010", "the length of amounts and ddcURIs do not match")
 	OwnersDDCIdsError = register(DDC, "1011", "the length of owners and ddcIds do not match")
+	BatchInfoNumError = register(DDC, "1012", "the number of the input params is inconsistent")
 
 	DDCIdError  = register(DDC, "1016", "ddcId is wrong")
 	DDCURIError = register(DDC, "1017", "ddcURI cannot be empty")

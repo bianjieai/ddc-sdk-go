@@ -63,7 +63,6 @@ func (a *AuthorityService) AddBatchAccountByOperator(opts *bind.TransactOpts, ac
 	if len(accounts)^len(accNames)^len(accNames)^len(leaderDIDs) != 0 {
 		return nil, types2.BatchInfoNumError
 	}
-	//for _
 
 	a.SetOpts(opts)
 	signedTx, err = handler.GetAuthority().AddBatchAccountByOperator(opts, accounts, accNames, accDIDs, leaderDIDs)

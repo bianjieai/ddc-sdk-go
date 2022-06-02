@@ -12,13 +12,13 @@ var (
 	OwnerAccountError    = register(DDC, "1028", "owner account is not a standard address format")
 	SenderAccountError   = register(DDC, "1029", "sender account is not a standard address format")
 	OperatorAccountError = register(DDC, "1030", "owner account is not a standard address format")
-	AccountsError        = register(DDC, "1031", "accounts must not be empty")
+	AccountListError     = register(DDC, "1031", "accounts must not be empty")
 	AccNamesError        = register(DDC, "1032", "accNames must not be empty")
 	AccDIDsError         = register(DDC, "1033", "accDIDs must not be empty")
 	LeaderDIDsError      = register(DDC, "1034", "LeaderDIDs must not be empty")
-	ToListError          = register(DDC, "1035", "toList must not be empty")
-	AmountsError         = register(DDC, "1036", "amounts must not be empty")
-	NameError            = register(DDC, "1037", "name must not be null")
+	ToListError     = register(DDC, "1035", "toList must not be empty")
+	AmountListError = register(DDC, "1036", "amounts must not be empty")
+	NameError       = register(DDC, "1037", "name must not be null")
 	SymbolError          = register(DDC, "1038", "symbol must not be null")
 
 	FromAccountError     = register(DDC, "1007", "from account is not a standard address format")
@@ -52,7 +52,7 @@ func (a *AppError) Error() string {
 	return a.desc
 }
 
-//记录已注册的error
+// 记录已注册的error
 var appErrors = map[string]*AppError{}
 
 func register(codeSpace, code, description string) *AppError {
