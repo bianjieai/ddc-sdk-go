@@ -111,7 +111,7 @@ func (c *ChargeService) BalanceOf(accAddr string) (uint64, error) {
 }
 
 // BalanceOfBatch
-// @Description: 查询指定账户的余额
+// @Description: 运营方、平台方或终端用户可以调用方法批量查询账户的余额
 // @receiver c
 // @param accAddr 要查询的账户地址
 // @return uint64 账户所对应的业务费余额
