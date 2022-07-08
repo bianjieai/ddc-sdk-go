@@ -1,0 +1,109 @@
+syntax = "proto3";
+package bianjieai.ddc.token;
+
+import "gogoproto/gogo.proto";
+import "ddc.proto";
+
+option go_package = "github.com/bianjieai/ddc-sdk-go/native-ddc-sdk-platform/token";
+// Msg defines the node Msg service.
+service Msg {
+  // Approve defines a method for approving a denom.
+  rpc Approve(MsgApprove) returns (MsgApproveResponse);
+  // ApproveForAll defines a method for approve for all for denom to a account.
+  rpc ApproveForAll(MsgApproveForAll) returns (MsgApproveForAllResponse);
+  // Freeze defines a method for freezing a token.
+  rpc Freeze(MsgFreeze) returns (MsgFreezeResponse);
+  // Unfreeze defines a method for unfreezing a token.
+  rpc Unfreeze(MsgUnfreeze) returns (MsgUnfreezeResponse);
+  // BatchBurn defines a method for burning a batch of token.
+  rpc BatchBurn(MsgBatchBurn) returns (MsgBatchBurnResponse);
+  // BatchBurn defines a method for tranfering a batch of token.
+  rpc BatchTransfer(MsgBatchTransfer) returns (MsgBatchTransferResponse);
+}
+
+// MsgApprove defines the Msg/Approve request type.
+message MsgApprove {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string denom = 1;
+  string token_id = 2 [ (gogoproto.customname) = "tokenID" ];
+  string operator = 3;
+  string to = 4;
+}
+
+// MsgApproveResponse defines the Msg/Approve response type.
+message MsgApproveResponse {}
+
+// MsgApproveForAll defines the Msg/ApproveForAll request type.
+message MsgApproveForAll {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  string operator = 3;
+  string sender = 4;
+}
+
+// MsgApproveForAllResponse defines the Msg/ApproveForAll response type.
+message MsgApproveForAllResponse {}
+
+// MsgFreeze defines the Msg/Freeze request type.
+message MsgFreeze {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  string token_id = 3 [ (gogoproto.customname) = "TokenID" ];
+  string operator = 4;
+}
+
+// MsgFreezeResponse defines the Msg/Freeze response type.
+message MsgFreezeResponse {}
+
+// MsgUnfreeze defines the Msg/Freeze request type.
+message MsgUnfreeze {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  string token_id = 3 [ (gogoproto.customname) = "TokenID" ];
+  string operator = 4;
+}
+
+// MsgUnfreezeResponse defines the Msg/Freeze response type.
+message MsgUnfreezeResponse {}
+
+// MsgBatchBurn defines the Msg/BatchBurn request type.
+message MsgBatchBurn {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  repeated string token_ids = 3 [ (gogoproto.customname) = "TokenIDs" ];
+  string operator = 4;
+}
+
+// MsgBatchBurnResponse defines the Msg/BatchBurn response type.
+message MsgBatchBurnResponse {}
+
+// MsgBatchTransfer defines the Msg/BatchTransfer request type.
+message MsgBatchTransfer {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  repeated string token_ids = 3 [ (gogoproto.customname) = "TokenIDs" ];
+  repeated uint64 amount = 4;
+  string from = 5;
+  string to = 6;
+  string sender = 7;
+}
+
+// MsgBatchTransferResponse defines the Msg/BatchTransfer response type.
+message MsgBatchTransferResponse {}

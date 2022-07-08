@@ -1,0 +1,57 @@
+syntax = "proto3";
+package bianjieai.ddc.auth;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "ddc.proto";
+
+option go_package = "github.com/bianjieai/ddc-sdk-go/native-ddc-sdk-platform/auth";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Account queries the account by address.
+  rpc Account(QueryAccountRequest) returns (QueryAccountResponse) {
+    option (google.api.http).get = "/ddc/auth/accounts/{address}";
+  }
+
+  // Functions queries the all functions can be executed by a role.
+  rpc Functions(QueryFunctionsRequest) returns (QueryFunctionsResponse) {
+    option (google.api.http).get = "/ddc/auth/functions/{role}";
+  }
+}
+
+// QueryAccountRequest is the request type for the Query/Account RPC method.
+message QueryAccountRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  // address is the address to query account for.
+  string address = 1;
+}
+
+// QueryAccountResponse is the request type for the Query/Account RPC method.
+message QueryAccountResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  AccountInfo account_info = 1;
+}
+
+// QueryFunctionsRequest is the request type for the Query/Functions RPC method.
+message QueryFunctionsRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Role role = 1;
+  Protocol protocol = 2;
+  string denom = 3;
+}
+
+// QueryFunctionsResponse is the request type for the Query/Functions RPC
+// method.
+message QueryFunctionsResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  repeated Function functions = 1;
+}

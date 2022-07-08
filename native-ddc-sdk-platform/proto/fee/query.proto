@@ -1,0 +1,100 @@
+syntax = "proto3";
+package bianjieai.ddc.fee;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "ddc.proto";
+
+option go_package = "github.com/bianjieai/ddc-sdk-go/native-ddc-sdk-platform/fee";
+
+// Query defines the gRPC querier service.
+service Query {
+  // BalanceOf queries the account balance by address.
+  rpc BalanceOf(QueryBalanceOfRequest) returns (QueryBalanceOfResponse) {
+    option (google.api.http).get = "/ddc/fees/balance/{address}";
+  }
+
+  // BalanceOfBatch queries the account balance by address.
+  rpc BalanceOfBatch(QueryBalanceOfBatchRequest)
+      returns (QueryBalanceOfBatchResponse) {
+    option (google.api.http).get = "/ddc/fees/balances";
+  }
+
+  // FeeRule queries the fee rule.
+  rpc FeeRule(QueryFeeRuleRequest) returns (QueryFeeRuleResponse) {
+    option (google.api.http).get = "/ddc/fees/rule";
+  }
+
+  // TotalSupply queries all the fee.
+  rpc TotalSupply(QueryTotalSupplyRequest) returns (QueryTotalSupplyResponse) {
+    option (google.api.http).get = "/ddc/fees/supply";
+  }
+}
+
+// QueryBalanceOfRequest is the request type for the Query/BalanceOf RPC method.
+message QueryBalanceOfRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  // address is the address to query account for.
+  string address = 1;
+}
+
+// QueryBalanceOfResponse is the request type for the Query/BalanceOf RPC
+// method.
+message QueryBalanceOfResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  uint64 amount = 1;
+}
+
+// QueryBalanceOfBatchRequest is the request type for the Query/BalanceOfBatch
+// RPC method.
+message QueryBalanceOfBatchRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  // address is the address to query account for.
+  repeated string address = 1;
+}
+
+// QueryBalanceOfBatchResponse is the request type for the Query/BalanceOfBatch
+// RPC method.
+message QueryBalanceOfBatchResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  repeated uint64 amount = 1;
+}
+
+// QueryFeeRuleRequest is the request type for the Query/FeeRule RPC method.
+message QueryFeeRuleRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  Function function = 3;
+}
+
+// QueryFeeRuleResponse is the request type for the Query/FeeRule RPC method.
+message QueryFeeRuleResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  uint64 amount = 1;
+}
+
+// QueryTotalSupplyRequest is the request type for the Query/TotalSupply RPC
+// method.
+message QueryTotalSupplyRequest {}
+
+// QueryTotalSupplyResponse is the request type for the Query/TotalSupply RPC
+// method.
+message QueryTotalSupplyResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  uint64 amount = 1;
+}
