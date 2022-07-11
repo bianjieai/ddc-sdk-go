@@ -1,0 +1,62 @@
+syntax = "proto3";
+package bianjieai.ddc;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/bianjieai/ddc-sdk-go/native-ddc-sdk-platform";
+option (gogoproto.goproto_getters_all) = false;
+
+enum Role {
+  OPERATOR = 0;
+  PLATFORM_MANAGER = 1;
+  CONSUMER = 2;
+}
+
+enum State {
+  FROZEN = 0;
+  ACTIVE = 1;
+}
+
+enum Function {
+  MINT = 0;
+  EDIT = 1;
+  BURN = 2;
+  TRANSFER = 3;
+  DDC_APPROVE = 4;
+  ACCOUNT_APPROVE = 5;
+  FREEZE = 6;
+  UNFREEZE = 7;
+  BATCH_BURN = 8;
+  BATCH_TRANSFER = 9;
+}
+
+enum Protocol {
+  NFT = 0;
+  MT = 1;
+}
+
+message AccountInfo {
+  string address = 1;
+  string did = 2 [ (gogoproto.customname) = "DID" ];
+  string name = 3;
+  Role role = 4;
+  string leader_did = 5 [ (gogoproto.customname) = "LeaderDID" ];
+  State platform_state = 6;
+  State operator_state = 7;
+}
+
+message FeeRule {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Function function = 1;
+  uint64 fee = 2;
+}
+
+message Balance {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string address = 1;
+  uint64 amount = 2;
+}

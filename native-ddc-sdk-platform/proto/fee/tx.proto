@@ -1,0 +1,105 @@
+syntax = "proto3";
+package bianjieai.ddc.fee;
+
+import "gogoproto/gogo.proto";
+import "ddc.proto";
+
+option go_package = "github.com/bianjieai/ddc-sdk-go/native-ddc-sdk-platform/fee";
+// Msg defines the node Msg service.
+service Msg {
+  // Recharge defines a method for recharging for a account.
+  rpc Recharge(MsgRecharge) returns (MsgRechargeResponse);
+  // RechargeBatch defines a method for recharging for asome accounts.
+  rpc RechargeBatch(MsgRechargeBatch) returns (MsgRechargeBatchResponse);
+  // Settlement defines a method for settlement for a operator.
+  rpc Settlement(MsgSettlement) returns (MsgSettlementResponse);
+  // SetFeeRule defines a method for adding a fee rule for executing a function.
+  rpc SetFeeRule(MsgSetFeeRule) returns (MsgSetFeeRuleResponse);
+  // DeleteFeeRule defines a method for deleting a fee rule.
+  rpc DeleteFeeRule(MsgDeleteFeeRule) returns (MsgDeleteFeeRuleResponse);
+  // RevokeDDC defines a method for revoce a ddc.
+  rpc RevokeDDC(MsgRevokeDDC) returns (MsgRevokeDDCResponse);
+}
+
+// MsgRecharge defines the Msg/Recharge request type.
+message MsgRecharge {
+
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string from = 1;
+  string to = 2;
+  uint64 amount = 3;
+}
+
+// MsgRechargeResponse defines the Msg/Recharge response type.
+message MsgRechargeResponse {}
+
+// MsgRechargeBatch defines the Msg/RechargeBatch request type.
+message MsgRechargeBatch {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string from = 1;
+  repeated string to = 2;
+  repeated uint64 amount = 3;
+}
+
+// MsgRechargeBatchResponse defines the Msg/RechargeBatch response type.
+message MsgRechargeBatchResponse {}
+
+// MsgSettlement defines the Msg/Settlement request type.
+message MsgSettlement {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  uint64 amount = 3;
+  string operator = 4;
+}
+
+// MsgSettlementResponse defines the Msg/Settlement response type.
+message MsgSettlementResponse {}
+
+// MsgSetFeeRule defines the Msg/SetFeeRule request type.
+message MsgSetFeeRule {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  Function function = 3;
+  uint32 fee = 4;
+  string operator = 5;
+}
+
+// MsgSetFeeRuleResponse defines the Msg/SetFeeRule response type.
+message MsgSetFeeRuleResponse {}
+
+// MsgDeleteFeeRule defines the Msg/DeleteFeeRule request type.
+message MsgDeleteFeeRule {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  Function function = 3;
+  string operator = 4;
+}
+
+// MsgDeleteFeeRule defines the Msg/DeleteFeeRule response type.
+message MsgDeleteFeeRuleResponse {}
+
+// MsgRevokeDDC defines the Msg/RevokeDDC request type.
+message MsgRevokeDDC {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  string operator = 3;
+}
+
+// MsgRevokeDDCResponse defines the Msg/RevokeDDC response type.
+message MsgRevokeDDCResponse {}

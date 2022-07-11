@@ -1,0 +1,175 @@
+syntax = "proto3";
+package bianjieai.ddc.auth;
+
+import "gogoproto/gogo.proto";
+import "ddc.proto";
+
+option go_package = "github.com/bianjieai/ddc-sdk-go/native-ddc-sdk-platform/auth";
+// Msg defines the node Msg service.
+service Msg {
+  // AddAccount defines a method for creating a account.
+  rpc AddAccount(MsgAddAccount) returns (MsgAddAccountResponse);
+  // AddBatchAccount defines a method for creating a batch of account.
+  rpc AddBatchAccount(MsgAddBatchAccount) returns (MsgAddBatchAccountResponse);
+  // UpdateAccountState defines a method for updating account state
+  rpc UpdateAccountState(MsgUpdateAccountState)
+      returns (MsgUpdateAccountStateResponse);
+  // DeleteAccount defines a method for deleting account
+  rpc DeleteAccount(MsgDeleteAccount) returns (MsgDeleteAccountResponse);
+  // AddFunction defines a method for granting account to call some function
+  rpc AddFunction(MsgAddFunction) returns (MsgAddFunctionResponse);
+  // DeleteFunction defines a method for revoking account
+  rpc DeleteFunction(MsgDeleteFunction) returns (MsgDeleteFunctionResponse);
+  // ApproveCrossPlatform defines a method for approving account cross platform
+  rpc ApproveCrossPlatform(MsgApproveCrossPlatform)
+      returns (MsgApproveCrossPlatformResponse);
+  // SyncPlatformDID defines a method for syncing did to a new platform
+  rpc SyncPlatformDID(MsgSyncPlatformDID) returns (MsgSyncPlatformDIDResponse);
+  // UpgradeToDDC defines a method for upgrade denom to ddc contract
+  rpc UpgradeToDDC(MsgUpgradeToDDC) returns (MsgUpgradeToDDCResponse);
+  // SetSwitcherStateOfPlatform defines a method for setting switcher
+  rpc SetSwitcherStateOfPlatform(MsgSetSwitcherStateOfPlatform)
+      returns (MsgSetSwitcherStateOfPlatformResponse);
+}
+
+// MsgAddAccount defines the Msg/AddAccount request type.
+message MsgAddAccount {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string address = 1;
+  string did = 2;
+  string name = 3;
+  Role role = 4;
+  string leader_did = 5 [ (gogoproto.customname) = "LeaderDID" ];
+  string sender = 6;
+}
+
+// MsgAddAccountResponse defines the Msg/AddAccount response type.
+message MsgAddAccountResponse {}
+
+// MsgAddBatchAccount defines the Msg/MsgAddBatchAccount request type.
+message MsgAddBatchAccount {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  repeated string address = 1;
+  repeated string did = 2;
+  repeated string name = 3;
+  repeated Role role = 4;
+  string leader_did = 5 [ (gogoproto.customname) = "LeaderDID" ];
+  string sender = 6;
+}
+
+// MsgAddBatchAccountResponse defines the Msg/MsgAddBatchAccount response type.
+message MsgAddBatchAccountResponse {}
+
+// MsgUpdateAccountState defines the Msg/UpdateAccountState request type.
+message MsgUpdateAccountState {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string address = 1;
+  State state = 2;
+  bool change_platform_state = 3;
+  string sender = 4;
+}
+
+// MsgAddBatchAccountResponse defines the Msg/UpdateAccountState response type.
+message MsgUpdateAccountStateResponse {}
+
+// MsgDeleteAccount defines the Msg/DeleteAccount request type.
+message MsgDeleteAccount {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string address = 1;
+  string sender = 2;
+}
+
+// MsgDeleteAccountResponse defines the Msg/DeleteAccount response type.
+message MsgDeleteAccountResponse {}
+
+// MsgAddFunction defines the Msg/AddFunction request type.
+message MsgAddFunction {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Role role = 1;
+  Protocol protocol = 2;
+  string denom = 3;
+  Function function = 4;
+  string operator = 5;
+}
+
+// MsgAddFunctionResponse defines the Msg/AddFunction response type.
+message MsgAddFunctionResponse {}
+
+// MsgDeleteFunction defines the Msg/DeleteFunction request type.
+message MsgDeleteFunction {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Role role = 1;
+  Protocol protocol = 2;
+  string denom = 3;
+  Function function = 4;
+  string operator = 5;
+}
+
+// MsgDeleteFunctionResponse defines the Msg/DeleteFunction response type.
+message MsgDeleteFunctionResponse {}
+
+// MsgApproveCrossPlatform defines the Msg/ApproveCrossPlatform request type.
+message MsgApproveCrossPlatform {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string from = 1;
+  string to = 2;
+  bool approved = 3;
+  string operator = 4;
+}
+
+// MsgApproveCrossPlatformResponse defines the Msg/ApproveCrossPlatform response
+// type.
+message MsgApproveCrossPlatformResponse {}
+
+// MsgSyncPlatformDID defines the Msg/SyncPlatformDID request type.
+message MsgSyncPlatformDID {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  repeated string dids = 1 [ (gogoproto.customname) = "DIDs" ];
+  string operator = 2;
+}
+
+// MsgSyncPlatformDIDResponse defines the Msg/SyncPlatformDID response type.
+message MsgSyncPlatformDIDResponse {}
+
+// MsgUpgradeToDDC defines the Msg/UpgradeToDDC request type.
+message MsgUpgradeToDDC {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 2;
+  string denom = 3;
+  string operator = 5;
+}
+
+// MsgUpgradeToDDCResponse defines the Msg/UpgradeToDDC response type.
+message MsgUpgradeToDDCResponse {}
+
+// MsgSetSwitcherStateOfPlatform defines the Msg/SetSwitcherStateOfPlatform
+// request type.
+message MsgSetSwitcherStateOfPlatform {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  bool is_open = 1;
+  string operator = 2;
+}
+
+// MsgSetSwitcherStateOfPlatformResponse defines the
+// Msg/SetSwitcherStateOfPlatform response type.
+message MsgSetSwitcherStateOfPlatformResponse {}

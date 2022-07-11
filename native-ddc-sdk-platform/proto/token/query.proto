@@ -1,0 +1,62 @@
+syntax = "proto3";
+package bianjieai.ddc.token;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "ddc.proto";
+
+option go_package = "github.com/bianjieai/ddc-sdk-go/native-ddc-sdk-platform/token";
+
+// Query defines the gRPC querier service.
+service Query {
+  // ApprovedForAll queries all the account approved.
+  rpc ApprovedForAll(QueryApprovedForAllRequest)
+      returns (QueryApprovedForAllResponse) {
+    option (google.api.http).get =
+        "/ddc/token/approved/{protocol}/{denom}/{owner}";
+  }
+
+  // TokenApproved queries the spender of the token.
+  rpc TokenApproved(QueryTokenApprovedRequest)
+      returns (QueryTokenApprovedResponse) {
+    option (google.api.http).get = "/ddc/token/ddc-approved/{denom}/{token_id}";
+  }
+}
+
+// QueryBalanceOfRequest is the request type for the Query/BalanceOf RPC method.
+message QueryApprovedForAllRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Protocol protocol = 1;
+  string denom = 2;
+  string owner = 3;
+}
+
+// QueryBalanceOfResponse is the request type for the Query/BalanceOf RPC
+// method.
+message QueryApprovedForAllResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  repeated string operator = 1;
+}
+
+// QueryTokenApprovedRequest is the request type for the Query/TokenApproved RPC
+// method.
+message QueryTokenApprovedRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string denom = 1;
+  string token_id = 2;
+}
+
+// QueryTokenApprovedResponse is the request type for the Query/TokenApproved
+// RPC method.
+message QueryTokenApprovedResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string operator = 1;
+}
