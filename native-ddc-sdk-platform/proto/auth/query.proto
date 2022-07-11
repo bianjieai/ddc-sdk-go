@@ -16,7 +16,25 @@ service Query {
 
   // Functions queries the all functions can be executed by a role.
   rpc Functions(QueryFunctionsRequest) returns (QueryFunctionsResponse) {
-    option (google.api.http).get = "/ddc/auth/functions/{role}";
+    option (google.api.http).get =
+        "/ddc/auth/functions/{role}/denom/{protocol}/{denom}";
+  }
+
+  // SwitcherIsOpen queries the switcher State of the platform
+  rpc SwitcherState(QuerySwitcherStateRequest)
+      returns (QuerySwitcherStateResponse) {
+    option (google.api.http).get = "/ddc/auth/switcher-state";
+  }
+
+  // DDCs queries all the denoms managered by ddc module
+  rpc DDCs(QueryDDCsRequest) returns (QueryDDCsResponse) {
+    option (google.api.http).get = "/ddc/auth/ddcs";
+  }
+
+  // CrossPlatformAble check if two accounts can be operated across platforms
+  rpc CrossPlatformAble(QueryCrossPlatformAbleRequest)
+      returns (QueryCrossPlatformAbleResponse) {
+    option (google.api.http).get = "/ddc/auth/platform/cross/{from}/{to}";
   }
 }
 
@@ -54,4 +72,48 @@ message QueryFunctionsResponse {
   option (gogoproto.goproto_getters) = false;
 
   repeated Function functions = 1;
+}
+
+// QuerySwitcherStateRequest is the request type for the Query/SwitcherState RPC
+// method.
+message QuerySwitcherStateRequest {}
+
+// QuerySwitcherStateResponse is the request type for the Query/SwitcherState
+// RPC method.
+message QuerySwitcherStateResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  bool is_open = 1;
+}
+
+// QueryDDCsRequest is the request type for the Query/DDCs RPC method.
+message QueryDDCsRequest {}
+
+// QueryDDCsResponse is the request type for the Query/DDCs RPC
+// method.
+message QueryDDCsResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  repeated DDC denoms = 1;
+}
+
+// QueryCrossPlatformAbleRequest is the request type for the
+// Query/CrossPlatformAble RPC method.
+message QueryCrossPlatformAbleRequest {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string from = 1;
+  string to = 2;
+}
+
+// QueryCrossPlatformAbleResponse is the request type for the
+// Query/CrossPlatformAble RPC method.
+message QueryCrossPlatformAbleResponse {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  bool enabled = 1;
 }

@@ -186,47 +186,300 @@ func (m *QueryFunctionsResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_QueryFunctionsResponse proto.InternalMessageInfo
 
+// QuerySwitcherStateRequest is the request type for the Query/SwitcherState RPC
+// method.
+type QuerySwitcherStateRequest struct {
+}
+
+func (m *QuerySwitcherStateRequest) Reset()         { *m = QuerySwitcherStateRequest{} }
+func (m *QuerySwitcherStateRequest) String() string { return proto.CompactTextString(m) }
+func (*QuerySwitcherStateRequest) ProtoMessage()    {}
+func (*QuerySwitcherStateRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_767911588e21ff13, []int{4}
+}
+func (m *QuerySwitcherStateRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QuerySwitcherStateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QuerySwitcherStateRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QuerySwitcherStateRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QuerySwitcherStateRequest.Merge(m, src)
+}
+func (m *QuerySwitcherStateRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QuerySwitcherStateRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QuerySwitcherStateRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QuerySwitcherStateRequest proto.InternalMessageInfo
+
+// QuerySwitcherStateResponse is the request type for the Query/SwitcherState
+// RPC method.
+type QuerySwitcherStateResponse struct {
+	IsOpen bool `protobuf:"varint,1,opt,name=is_open,json=isOpen,proto3" json:"is_open,omitempty"`
+}
+
+func (m *QuerySwitcherStateResponse) Reset()         { *m = QuerySwitcherStateResponse{} }
+func (m *QuerySwitcherStateResponse) String() string { return proto.CompactTextString(m) }
+func (*QuerySwitcherStateResponse) ProtoMessage()    {}
+func (*QuerySwitcherStateResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_767911588e21ff13, []int{5}
+}
+func (m *QuerySwitcherStateResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QuerySwitcherStateResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QuerySwitcherStateResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QuerySwitcherStateResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QuerySwitcherStateResponse.Merge(m, src)
+}
+func (m *QuerySwitcherStateResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QuerySwitcherStateResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QuerySwitcherStateResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QuerySwitcherStateResponse proto.InternalMessageInfo
+
+// QueryDDCsRequest is the request type for the Query/DDCs RPC method.
+type QueryDDCsRequest struct {
+}
+
+func (m *QueryDDCsRequest) Reset()         { *m = QueryDDCsRequest{} }
+func (m *QueryDDCsRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryDDCsRequest) ProtoMessage()    {}
+func (*QueryDDCsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_767911588e21ff13, []int{6}
+}
+func (m *QueryDDCsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryDDCsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryDDCsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryDDCsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryDDCsRequest.Merge(m, src)
+}
+func (m *QueryDDCsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryDDCsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryDDCsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryDDCsRequest proto.InternalMessageInfo
+
+// QueryDDCsResponse is the request type for the Query/DDCs RPC
+// method.
+type QueryDDCsResponse struct {
+	Denoms []*native_ddc_sdk_platform.DDC `protobuf:"bytes,1,rep,name=denoms,proto3" json:"denoms,omitempty"`
+}
+
+func (m *QueryDDCsResponse) Reset()         { *m = QueryDDCsResponse{} }
+func (m *QueryDDCsResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryDDCsResponse) ProtoMessage()    {}
+func (*QueryDDCsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_767911588e21ff13, []int{7}
+}
+func (m *QueryDDCsResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryDDCsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryDDCsResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryDDCsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryDDCsResponse.Merge(m, src)
+}
+func (m *QueryDDCsResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryDDCsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryDDCsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryDDCsResponse proto.InternalMessageInfo
+
+// QueryCrossPlatformAbleRequest is the request type for the
+// Query/CrossPlatformAble RPC method.
+type QueryCrossPlatformAbleRequest struct {
+	From string `protobuf:"bytes,1,opt,name=from,proto3" json:"from,omitempty"`
+	To   string `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
+}
+
+func (m *QueryCrossPlatformAbleRequest) Reset()         { *m = QueryCrossPlatformAbleRequest{} }
+func (m *QueryCrossPlatformAbleRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryCrossPlatformAbleRequest) ProtoMessage()    {}
+func (*QueryCrossPlatformAbleRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_767911588e21ff13, []int{8}
+}
+func (m *QueryCrossPlatformAbleRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryCrossPlatformAbleRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryCrossPlatformAbleRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryCrossPlatformAbleRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryCrossPlatformAbleRequest.Merge(m, src)
+}
+func (m *QueryCrossPlatformAbleRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryCrossPlatformAbleRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryCrossPlatformAbleRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryCrossPlatformAbleRequest proto.InternalMessageInfo
+
+// QueryCrossPlatformAbleResponse is the request type for the
+// Query/CrossPlatformAble RPC method.
+type QueryCrossPlatformAbleResponse struct {
+	Enabled bool `protobuf:"varint,1,opt,name=enabled,proto3" json:"enabled,omitempty"`
+}
+
+func (m *QueryCrossPlatformAbleResponse) Reset()         { *m = QueryCrossPlatformAbleResponse{} }
+func (m *QueryCrossPlatformAbleResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryCrossPlatformAbleResponse) ProtoMessage()    {}
+func (*QueryCrossPlatformAbleResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_767911588e21ff13, []int{9}
+}
+func (m *QueryCrossPlatformAbleResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryCrossPlatformAbleResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryCrossPlatformAbleResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryCrossPlatformAbleResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryCrossPlatformAbleResponse.Merge(m, src)
+}
+func (m *QueryCrossPlatformAbleResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryCrossPlatformAbleResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryCrossPlatformAbleResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryCrossPlatformAbleResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*QueryAccountRequest)(nil), "bianjieai.ddc.auth.QueryAccountRequest")
 	proto.RegisterType((*QueryAccountResponse)(nil), "bianjieai.ddc.auth.QueryAccountResponse")
 	proto.RegisterType((*QueryFunctionsRequest)(nil), "bianjieai.ddc.auth.QueryFunctionsRequest")
 	proto.RegisterType((*QueryFunctionsResponse)(nil), "bianjieai.ddc.auth.QueryFunctionsResponse")
+	proto.RegisterType((*QuerySwitcherStateRequest)(nil), "bianjieai.ddc.auth.QuerySwitcherStateRequest")
+	proto.RegisterType((*QuerySwitcherStateResponse)(nil), "bianjieai.ddc.auth.QuerySwitcherStateResponse")
+	proto.RegisterType((*QueryDDCsRequest)(nil), "bianjieai.ddc.auth.QueryDDCsRequest")
+	proto.RegisterType((*QueryDDCsResponse)(nil), "bianjieai.ddc.auth.QueryDDCsResponse")
+	proto.RegisterType((*QueryCrossPlatformAbleRequest)(nil), "bianjieai.ddc.auth.QueryCrossPlatformAbleRequest")
+	proto.RegisterType((*QueryCrossPlatformAbleResponse)(nil), "bianjieai.ddc.auth.QueryCrossPlatformAbleResponse")
 }
 
 func init() { proto.RegisterFile("auth/query.proto", fileDescriptor_767911588e21ff13) }
 
 var fileDescriptor_767911588e21ff13 = []byte{
-	// 466 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x52, 0x41, 0x6b, 0xd4, 0x40,
-	0x14, 0xce, 0x6c, 0xad, 0xed, 0x4e, 0x45, 0x64, 0xba, 0x6a, 0x08, 0x4b, 0x5a, 0x16, 0xa1, 0x55,
-	0xd8, 0x0c, 0x6c, 0xf1, 0xa0, 0xe8, 0x41, 0x0f, 0x82, 0x37, 0xcd, 0x41, 0xd0, 0x4b, 0x99, 0xcd,
-	0xcc, 0xa6, 0xa3, 0xd9, 0x79, 0xdb, 0xcc, 0x44, 0x90, 0xd2, 0x4b, 0x0f, 0xe2, 0x51, 0x90, 0xde,
-	0xfb, 0x73, 0x3c, 0x16, 0xbc, 0x78, 0x94, 0x5d, 0x0f, 0xfe, 0x0c, 0xc9, 0xec, 0x64, 0xd3, 0xc6,
-	0x15, 0xbd, 0xe5, 0xbd, 0xf7, 0xbd, 0xef, 0xfb, 0xde, 0x7c, 0xc1, 0x37, 0x58, 0x61, 0x0e, 0xe8,
-	0x61, 0x21, 0xf2, 0x0f, 0xd1, 0x24, 0x07, 0x03, 0x84, 0x0c, 0x25, 0x53, 0x6f, 0xa5, 0x60, 0x32,
-	0xe2, 0x3c, 0x89, 0xca, 0x79, 0xd0, 0x49, 0x21, 0x05, 0x3b, 0xa6, 0xe5, 0xd7, 0x1c, 0x19, 0x74,
-	0x53, 0x80, 0x34, 0x13, 0x94, 0x4d, 0x24, 0x65, 0x4a, 0x81, 0x61, 0x46, 0x82, 0xd2, 0x6e, 0xda,
-	0x2e, 0xb7, 0xed, 0x67, 0xef, 0x01, 0xde, 0x7c, 0x59, 0x2a, 0x3c, 0x49, 0x12, 0x28, 0x94, 0x89,
-	0xc5, 0x61, 0x21, 0xb4, 0x21, 0x3e, 0x5e, 0x63, 0x9c, 0xe7, 0x42, 0x6b, 0x1f, 0x6d, 0xa3, 0xdd,
-	0x76, 0x5c, 0x95, 0x0f, 0xd7, 0x3f, 0x9d, 0x6d, 0x79, 0xbf, 0xce, 0xb6, 0xbc, 0xde, 0x3e, 0xee,
-	0x5c, 0x5e, 0xd5, 0x13, 0x50, 0x5a, 0x90, 0xc7, 0xf8, 0x1a, 0x9b, 0xb7, 0xf6, 0xa5, 0x1a, 0x81,
-	0x25, 0xd8, 0x18, 0x04, 0xd1, 0x65, 0xf3, 0x6e, 0xeb, 0xb9, 0x1a, 0x41, 0xbc, 0xc1, 0xea, 0xe2,
-	0x82, 0xc0, 0x29, 0xc2, 0x37, 0xad, 0xc2, 0xb3, 0x42, 0x25, 0xd6, 0x7f, 0x65, 0x6f, 0x07, 0x5f,
-	0xc9, 0x21, 0x13, 0x96, 0xfa, 0xfa, 0x60, 0xb3, 0x41, 0x1d, 0x43, 0x26, 0x62, 0x0b, 0x20, 0x7b,
-	0x78, 0xdd, 0xde, 0x99, 0x40, 0xe6, 0xb7, 0x2c, 0xf8, 0x76, 0x03, 0xfc, 0xc2, 0x8d, 0xe3, 0x05,
-	0x90, 0x74, 0xf0, 0x2a, 0x17, 0x0a, 0xc6, 0xfe, 0x8a, 0x3d, 0x7d, 0x5e, 0x5c, 0xf0, 0xf5, 0x1a,
-	0xdf, 0x6a, 0xda, 0x72, 0xa7, 0xdf, 0xc7, 0xed, 0x51, 0xd5, 0xf4, 0xd1, 0xf6, 0xca, 0x12, 0xbd,
-	0x6a, 0x29, 0xae, 0x91, 0x35, 0xf5, 0xe0, 0xb4, 0x85, 0x57, 0x2d, 0x37, 0x39, 0x41, 0x78, 0xcd,
-	0xbd, 0x11, 0xd9, 0x89, 0xfe, 0x0c, 0x3e, 0x5a, 0x12, 0x5b, 0xb0, 0xfb, 0x6f, 0xe0, 0xdc, 0x69,
-	0xef, 0xce, 0xc9, 0xb7, 0x9f, 0x5f, 0x5a, 0x21, 0xe9, 0x52, 0xce, 0x13, 0x6a, 0xff, 0x34, 0x17,
-	0x82, 0xa6, 0x47, 0x2e, 0xeb, 0x63, 0xf2, 0x11, 0xe1, 0xf6, 0xe2, 0x4a, 0x72, 0xf7, 0xaf, 0xec,
-	0xcd, 0x80, 0x82, 0x7b, 0xff, 0x03, 0x75, 0x56, 0x7a, 0xd6, 0x4a, 0x97, 0x04, 0xb5, 0x95, 0xc5,
-	0xd3, 0xd0, 0xa3, 0x32, 0xc6, 0xe3, 0xa7, 0xaf, 0xbe, 0x4e, 0x43, 0x74, 0x3e, 0x0d, 0xd1, 0x8f,
-	0x69, 0x88, 0x3e, 0xcf, 0x42, 0xef, 0x7c, 0x16, 0x7a, 0xdf, 0x67, 0xa1, 0xf7, 0xe6, 0x51, 0x2a,
-	0xcd, 0x41, 0x31, 0x8c, 0x12, 0x18, 0xd3, 0x85, 0x66, 0xc9, 0xd4, 0xd7, 0xfc, 0x5d, 0x3f, 0x05,
-	0xaa, 0x98, 0x91, 0xef, 0x45, 0xbf, 0xea, 0x4c, 0x32, 0x66, 0x46, 0x90, 0x8f, 0xad, 0xd0, 0xf0,
-	0xaa, 0x0d, 0x7d, 0xef, 0x77, 0x00, 0x00, 0x00, 0xff, 0xff, 0xd2, 0x0e, 0x71, 0x62, 0x6c, 0x03,
-	0x00, 0x00,
+	// 718 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x53, 0x4f, 0x4f, 0x13, 0x4f,
+	0x18, 0xee, 0x96, 0x3f, 0xa5, 0x2f, 0xbf, 0x1f, 0x81, 0x01, 0x61, 0x5d, 0x71, 0x21, 0x0d, 0x0a,
+	0x12, 0xbb, 0x13, 0x4b, 0x38, 0xf8, 0x2f, 0x06, 0x69, 0x4c, 0x38, 0x18, 0x71, 0x49, 0x4c, 0xf4,
+	0x42, 0xb6, 0xbb, 0xd3, 0xb2, 0xb2, 0x9d, 0x29, 0x3b, 0x53, 0x8d, 0x69, 0x7a, 0xe1, 0xe4, 0x91,
+	0xc4, 0x78, 0x96, 0xa3, 0x1f, 0xc5, 0x23, 0x89, 0x17, 0xbd, 0x19, 0xf0, 0xe0, 0xc7, 0x30, 0x3b,
+	0x9d, 0xed, 0x2e, 0xa5, 0x0d, 0x78, 0xdb, 0x99, 0xf7, 0x79, 0x9f, 0xe7, 0x79, 0x77, 0x9e, 0x17,
+	0x26, 0x9d, 0xa6, 0xd8, 0xc3, 0x07, 0x4d, 0x12, 0x7e, 0xb0, 0x1a, 0x21, 0x13, 0x0c, 0xa1, 0x8a,
+	0xef, 0xd0, 0xb7, 0x3e, 0x71, 0x7c, 0xcb, 0xf3, 0x5c, 0x2b, 0xaa, 0x1b, 0x33, 0x35, 0x56, 0x63,
+	0xb2, 0x8c, 0xa3, 0xaf, 0x0e, 0xd2, 0x98, 0xaf, 0x31, 0x56, 0x0b, 0x08, 0x76, 0x1a, 0x3e, 0x76,
+	0x28, 0x65, 0xc2, 0x11, 0x3e, 0xa3, 0x5c, 0x55, 0xf3, 0x51, 0xb7, 0xfc, 0x2c, 0xdc, 0x87, 0xe9,
+	0x97, 0x91, 0xc2, 0x86, 0xeb, 0xb2, 0x26, 0x15, 0x36, 0x39, 0x68, 0x12, 0x2e, 0x90, 0x0e, 0x39,
+	0xc7, 0xf3, 0x42, 0xc2, 0xb9, 0xae, 0x2d, 0x6a, 0x2b, 0x79, 0x3b, 0x3e, 0x3e, 0x18, 0xfb, 0x78,
+	0xbc, 0x90, 0xf9, 0x73, 0xbc, 0x90, 0x29, 0xec, 0xc2, 0xcc, 0xf9, 0x56, 0xde, 0x60, 0x94, 0x13,
+	0xf4, 0x18, 0xfe, 0x73, 0x3a, 0x57, 0xbb, 0x3e, 0xad, 0x32, 0x49, 0x30, 0x5e, 0x32, 0xac, 0xf3,
+	0xe6, 0x55, 0xd7, 0x16, 0xad, 0x32, 0x7b, 0xdc, 0x49, 0x0e, 0x29, 0x81, 0xcf, 0x1a, 0x5c, 0x93,
+	0x0a, 0xcf, 0x9a, 0xd4, 0x95, 0xfe, 0x63, 0x7b, 0xcb, 0x30, 0x1c, 0xb2, 0x80, 0x48, 0xea, 0x89,
+	0xd2, 0x74, 0x0f, 0xb5, 0xcd, 0x02, 0x62, 0x4b, 0x00, 0x5a, 0x83, 0x31, 0x39, 0xa7, 0xcb, 0x02,
+	0x3d, 0x2b, 0xc1, 0x73, 0x3d, 0xe0, 0x6d, 0x55, 0xb6, 0xbb, 0x40, 0x34, 0x03, 0x23, 0x1e, 0xa1,
+	0xac, 0xae, 0x0f, 0xc9, 0xd1, 0x3b, 0x87, 0x94, 0xaf, 0xd7, 0x30, 0xdb, 0x6b, 0x4b, 0x8d, 0xbe,
+	0x0e, 0xf9, 0x6a, 0x7c, 0xa9, 0x6b, 0x8b, 0x43, 0x7d, 0xf4, 0xe2, 0x26, 0x3b, 0x41, 0xa6, 0xa8,
+	0x6f, 0xc0, 0x75, 0x49, 0xbd, 0xf3, 0xde, 0x17, 0xee, 0x1e, 0x09, 0x77, 0x84, 0x23, 0x88, 0x9a,
+	0xba, 0xf0, 0x04, 0x8c, 0x7e, 0x45, 0xa5, 0x3d, 0x07, 0x39, 0x9f, 0xef, 0xb2, 0x06, 0xa1, 0xf2,
+	0xb7, 0x8c, 0xd9, 0xa3, 0x3e, 0x7f, 0xd1, 0x20, 0x34, 0xc5, 0x8e, 0x60, 0x52, 0x12, 0x94, 0xcb,
+	0x9b, 0xf1, 0xaf, 0x2c, 0x6c, 0xc1, 0x54, 0xea, 0x4e, 0x71, 0xad, 0xc2, 0xa8, 0x1c, 0xba, 0x33,
+	0xc4, 0x78, 0x09, 0xf5, 0x0c, 0x51, 0x2e, 0x6f, 0xda, 0x0a, 0x91, 0xa2, 0x7f, 0x0e, 0x37, 0x25,
+	0xd5, 0x66, 0xc8, 0x38, 0xdf, 0x0e, 0x1c, 0x51, 0x65, 0x61, 0x7d, 0xa3, 0x12, 0xc4, 0x03, 0x20,
+	0x04, 0xc3, 0xd5, 0x90, 0xd5, 0x55, 0xa4, 0xe4, 0x37, 0x9a, 0x80, 0xac, 0x60, 0xf2, 0x6d, 0xf2,
+	0x76, 0x56, 0xa4, 0x9f, 0xbf, 0x0c, 0xe6, 0x20, 0x3a, 0x65, 0x53, 0x87, 0x1c, 0xa1, 0x4e, 0x25,
+	0x20, 0x9e, 0x1a, 0x39, 0x3e, 0x26, 0x2c, 0xa5, 0x9f, 0x23, 0x30, 0x22, 0x69, 0xd0, 0xa1, 0x06,
+	0x39, 0x95, 0x3a, 0xb4, 0x6c, 0x5d, 0x5c, 0x25, 0xab, 0xcf, 0x22, 0x18, 0x2b, 0x97, 0x03, 0x3b,
+	0x66, 0x0a, 0x4b, 0x87, 0xdf, 0x7f, 0x7f, 0xca, 0x9a, 0x68, 0x1e, 0x7b, 0x9e, 0x8b, 0xe5, 0xee,
+	0xaa, 0x58, 0x73, 0xdc, 0x52, 0xdb, 0xd3, 0x46, 0x5f, 0x34, 0xc8, 0x77, 0x73, 0x83, 0xee, 0x0c,
+	0x64, 0xef, 0x8d, 0xbc, 0xb1, 0x7a, 0x15, 0xa8, 0xb2, 0xf2, 0x50, 0x5a, 0x59, 0x47, 0x6b, 0x89,
+	0x95, 0x6e, 0xd8, 0x70, 0x2b, 0x5a, 0x8c, 0x36, 0x96, 0xaf, 0x87, 0x5b, 0x71, 0xe8, 0xdb, 0xb8,
+	0x25, 0x6f, 0xda, 0xe8, 0x48, 0x83, 0xff, 0xcf, 0x25, 0x0c, 0x15, 0x07, 0x4a, 0xf7, 0x8b, 0xa9,
+	0x61, 0x5d, 0x15, 0xae, 0xdc, 0x2e, 0x4a, 0xb7, 0x06, 0xd2, 0x13, 0xb7, 0x5c, 0x01, 0x8b, 0x5c,
+	0x1a, 0xd8, 0x87, 0xe1, 0x28, 0x9e, 0x68, 0x69, 0x20, 0x73, 0x2a, 0xd1, 0xc6, 0xad, 0x4b, 0x50,
+	0x4a, 0x76, 0x56, 0xca, 0x4e, 0xa2, 0x89, 0x44, 0xd6, 0xf3, 0x5c, 0x8e, 0xbe, 0x6a, 0x30, 0x75,
+	0x21, 0x72, 0xe8, 0xde, 0x40, 0xd2, 0x41, 0x69, 0x37, 0x4a, 0xff, 0xd2, 0xa2, 0x4c, 0xdd, 0x95,
+	0xa6, 0x6e, 0xa3, 0xa5, 0xc4, 0x54, 0x43, 0xe1, 0xb0, 0x1b, 0x75, 0xe1, 0x56, 0xb4, 0x35, 0x6d,
+	0xdc, 0x12, 0xac, 0xfd, 0xf4, 0xd5, 0xb7, 0x53, 0x53, 0x3b, 0x39, 0x35, 0xb5, 0x5f, 0xa7, 0xa6,
+	0x76, 0x74, 0x66, 0x66, 0x4e, 0xce, 0xcc, 0xcc, 0x8f, 0x33, 0x33, 0xf3, 0xe6, 0x51, 0xcd, 0x17,
+	0x7b, 0xcd, 0x8a, 0xe5, 0xb2, 0x3a, 0xee, 0xba, 0x88, 0x38, 0x8b, 0xdc, 0xdb, 0x2f, 0xd6, 0x18,
+	0xa6, 0x8e, 0xf0, 0xdf, 0x91, 0x62, 0x7c, 0xd3, 0x15, 0x89, 0x24, 0x2b, 0xa3, 0x32, 0x15, 0x6b,
+	0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0xd8, 0xba, 0x9b, 0x74, 0x82, 0x06, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -245,6 +498,12 @@ type QueryClient interface {
 	Account(ctx context.Context, in *QueryAccountRequest, opts ...grpc.CallOption) (*QueryAccountResponse, error)
 	// Functions queries the all functions can be executed by a role.
 	Functions(ctx context.Context, in *QueryFunctionsRequest, opts ...grpc.CallOption) (*QueryFunctionsResponse, error)
+	// SwitcherIsOpen queries the switcher State of the platform
+	SwitcherState(ctx context.Context, in *QuerySwitcherStateRequest, opts ...grpc.CallOption) (*QuerySwitcherStateResponse, error)
+	// DDCs queries all the denoms managered by ddc module
+	DDCs(ctx context.Context, in *QueryDDCsRequest, opts ...grpc.CallOption) (*QueryDDCsResponse, error)
+	// CrossPlatformAble check if two accounts can be operated across platforms
+	CrossPlatformAble(ctx context.Context, in *QueryCrossPlatformAbleRequest, opts ...grpc.CallOption) (*QueryCrossPlatformAbleResponse, error)
 }
 
 type queryClient struct {
@@ -273,12 +532,45 @@ func (c *queryClient) Functions(ctx context.Context, in *QueryFunctionsRequest, 
 	return out, nil
 }
 
+func (c *queryClient) SwitcherState(ctx context.Context, in *QuerySwitcherStateRequest, opts ...grpc.CallOption) (*QuerySwitcherStateResponse, error) {
+	out := new(QuerySwitcherStateResponse)
+	err := c.cc.Invoke(ctx, "/bianjieai.ddc.auth.Query/SwitcherState", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) DDCs(ctx context.Context, in *QueryDDCsRequest, opts ...grpc.CallOption) (*QueryDDCsResponse, error) {
+	out := new(QueryDDCsResponse)
+	err := c.cc.Invoke(ctx, "/bianjieai.ddc.auth.Query/DDCs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) CrossPlatformAble(ctx context.Context, in *QueryCrossPlatformAbleRequest, opts ...grpc.CallOption) (*QueryCrossPlatformAbleResponse, error) {
+	out := new(QueryCrossPlatformAbleResponse)
+	err := c.cc.Invoke(ctx, "/bianjieai.ddc.auth.Query/CrossPlatformAble", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 type QueryServer interface {
 	// Account queries the account by address.
 	Account(context.Context, *QueryAccountRequest) (*QueryAccountResponse, error)
 	// Functions queries the all functions can be executed by a role.
 	Functions(context.Context, *QueryFunctionsRequest) (*QueryFunctionsResponse, error)
+	// SwitcherIsOpen queries the switcher State of the platform
+	SwitcherState(context.Context, *QuerySwitcherStateRequest) (*QuerySwitcherStateResponse, error)
+	// DDCs queries all the denoms managered by ddc module
+	DDCs(context.Context, *QueryDDCsRequest) (*QueryDDCsResponse, error)
+	// CrossPlatformAble check if two accounts can be operated across platforms
+	CrossPlatformAble(context.Context, *QueryCrossPlatformAbleRequest) (*QueryCrossPlatformAbleResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -290,6 +582,15 @@ func (*UnimplementedQueryServer) Account(ctx context.Context, req *QueryAccountR
 }
 func (*UnimplementedQueryServer) Functions(ctx context.Context, req *QueryFunctionsRequest) (*QueryFunctionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Functions not implemented")
+}
+func (*UnimplementedQueryServer) SwitcherState(ctx context.Context, req *QuerySwitcherStateRequest) (*QuerySwitcherStateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SwitcherState not implemented")
+}
+func (*UnimplementedQueryServer) DDCs(ctx context.Context, req *QueryDDCsRequest) (*QueryDDCsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DDCs not implemented")
+}
+func (*UnimplementedQueryServer) CrossPlatformAble(ctx context.Context, req *QueryCrossPlatformAbleRequest) (*QueryCrossPlatformAbleResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CrossPlatformAble not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -332,6 +633,60 @@ func _Query_Functions_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_SwitcherState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QuerySwitcherStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).SwitcherState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bianjieai.ddc.auth.Query/SwitcherState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).SwitcherState(ctx, req.(*QuerySwitcherStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_DDCs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryDDCsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).DDCs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bianjieai.ddc.auth.Query/DDCs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).DDCs(ctx, req.(*QueryDDCsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_CrossPlatformAble_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryCrossPlatformAbleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).CrossPlatformAble(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/bianjieai.ddc.auth.Query/CrossPlatformAble",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).CrossPlatformAble(ctx, req.(*QueryCrossPlatformAbleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "bianjieai.ddc.auth.Query",
 	HandlerType: (*QueryServer)(nil),
@@ -343,6 +698,18 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Functions",
 			Handler:    _Query_Functions_Handler,
+		},
+		{
+			MethodName: "SwitcherState",
+			Handler:    _Query_SwitcherState_Handler,
+		},
+		{
+			MethodName: "DDCs",
+			Handler:    _Query_DDCs_Handler,
+		},
+		{
+			MethodName: "CrossPlatformAble",
+			Handler:    _Query_CrossPlatformAble_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -495,6 +862,192 @@ func (m *QueryFunctionsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
+func (m *QuerySwitcherStateRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QuerySwitcherStateRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QuerySwitcherStateRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QuerySwitcherStateResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QuerySwitcherStateResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QuerySwitcherStateResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.IsOpen {
+		i--
+		if m.IsOpen {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryDDCsRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryDDCsRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryDDCsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryDDCsResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryDDCsResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryDDCsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Denoms) > 0 {
+		for iNdEx := len(m.Denoms) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Denoms[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryCrossPlatformAbleRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryCrossPlatformAbleRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryCrossPlatformAbleRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.To) > 0 {
+		i -= len(m.To)
+		copy(dAtA[i:], m.To)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.To)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.From) > 0 {
+		i -= len(m.From)
+		copy(dAtA[i:], m.From)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.From)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryCrossPlatformAbleResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryCrossPlatformAbleResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryCrossPlatformAbleResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Enabled {
+		i--
+		if m.Enabled {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -563,6 +1116,80 @@ func (m *QueryFunctionsResponse) Size() (n int) {
 			l += sovQuery(uint64(e))
 		}
 		n += 1 + sovQuery(uint64(l)) + l
+	}
+	return n
+}
+
+func (m *QuerySwitcherStateRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QuerySwitcherStateResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.IsOpen {
+		n += 2
+	}
+	return n
+}
+
+func (m *QueryDDCsRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *QueryDDCsResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Denoms) > 0 {
+		for _, e := range m.Denoms {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *QueryCrossPlatformAbleRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.From)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	l = len(m.To)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryCrossPlatformAbleResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Enabled {
+		n += 2
 	}
 	return n
 }
@@ -959,6 +1586,444 @@ func (m *QueryFunctionsResponse) Unmarshal(dAtA []byte) error {
 			} else {
 				return fmt.Errorf("proto: wrong wireType = %d for field Functions", wireType)
 			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QuerySwitcherStateRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QuerySwitcherStateRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QuerySwitcherStateRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QuerySwitcherStateResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QuerySwitcherStateResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QuerySwitcherStateResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field IsOpen", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.IsOpen = bool(v != 0)
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryDDCsRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryDDCsRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryDDCsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryDDCsResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryDDCsResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryDDCsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Denoms", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Denoms = append(m.Denoms, &native_ddc_sdk_platform.DDC{})
+			if err := m.Denoms[len(m.Denoms)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryCrossPlatformAbleRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryCrossPlatformAbleRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryCrossPlatformAbleRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field From", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.From = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field To", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.To = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryCrossPlatformAbleResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryCrossPlatformAbleResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryCrossPlatformAbleResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Enabled", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Enabled = bool(v != 0)
 		default:
 			iNdEx = preIndex
 			skippy, err := skipQuery(dAtA[iNdEx:])

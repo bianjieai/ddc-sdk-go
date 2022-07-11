@@ -27,7 +27,7 @@ message MsgApprove {
   option (gogoproto.goproto_getters) = false;
 
   string denom = 1;
-  string token_id = 2 [ (gogoproto.customname) = "tokenID" ];
+  string token_id = 2 [ (gogoproto.customname) = "TokenID" ];
   string operator = 3;
   string to = 4;
 }

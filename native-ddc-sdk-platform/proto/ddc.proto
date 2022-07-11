@@ -35,6 +35,11 @@ enum Protocol {
   MT = 1;
 }
 
+message DDC {
+  Protocol protocol = 1;
+  string denom = 2;
+}
+
 message AccountInfo {
   string address = 1;
   string did = 2 [ (gogoproto.customname) = "DID" ];

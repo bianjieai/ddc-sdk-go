@@ -40,9 +40,8 @@ message MsgAddAccount {
   string address = 1;
   string did = 2;
   string name = 3;
-  Role role = 4;
-  string leader_did = 5 [ (gogoproto.customname) = "LeaderDID" ];
-  string sender = 6;
+  string leader_did = 4 [ (gogoproto.customname) = "LeaderDID" ];
+  string sender = 5;
 }
 
 // MsgAddAccountResponse defines the Msg/AddAccount response type.
@@ -53,12 +52,11 @@ message MsgAddBatchAccount {
   option (gogoproto.equal) = false;
   option (gogoproto.goproto_getters) = false;
 
-  repeated string address = 1;
-  repeated string did = 2;
-  repeated string name = 3;
-  repeated Role role = 4;
-  string leader_did = 5 [ (gogoproto.customname) = "LeaderDID" ];
-  string sender = 6;
+  repeated string addresses = 1;
+  repeated string dids = 2;
+  repeated string names = 3;
+  repeated string leader_dids = 4 [ (gogoproto.customname) = "LeaderDIDs" ];
+  string sender = 5;
 }
 
 // MsgAddBatchAccountResponse defines the Msg/MsgAddBatchAccount response type.
