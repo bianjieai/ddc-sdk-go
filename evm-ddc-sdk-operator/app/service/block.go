@@ -35,7 +35,7 @@ type BlockService struct {
 
 	ethClient  *gethethclient.Client
 	gethCli    *gethclient.Client
-	gethRpcCli *gethrpc.Client
+	gethRPCCli *gethrpc.Client
 }
 
 func NewBlockService() (*BlockService, error) {
@@ -79,7 +79,7 @@ func NewBlockService() (*BlockService, error) {
 
 		ethClient:  ethClient,
 		gethCli:    gethCli,
-		gethRpcCli: rpcClient,
+		gethRPCCli: rpcClient,
 	}, nil
 }
 
@@ -244,7 +244,6 @@ func (b BlockService) parseLogs(logs chan gethtypes.Log, resChs chan interface{}
 		}
 		resChs <- event
 	}
-	return
 }
 
 // GetTxEvents
