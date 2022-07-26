@@ -1,4 +1,4 @@
-module github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go
+module github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator
 
 go 1.17
 
