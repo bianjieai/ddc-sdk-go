@@ -132,7 +132,13 @@ func (d *DDCSdkClientBuilder) Build() *DDCSdkClient {
 		d.client.ddc1155Address)
 	//设置logFile
 	log.RegisterLog(d.client.logFile)
+
 	//获取连接
 	config.Info.SetConn(handler.GetConn())
+	blockService, err := service.NewBlockService()
+	if err != nil {
+		panic(err)
+	}
+	d.client.BlockService = *blockService
 	return d.client
 }
