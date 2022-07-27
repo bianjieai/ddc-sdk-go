@@ -4,7 +4,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/listener"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/listener"
 )
 
 type ConfigInfo struct {

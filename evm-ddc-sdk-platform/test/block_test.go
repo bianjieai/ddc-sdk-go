@@ -2,17 +2,26 @@ package test
 
 import (
 	"fmt"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/service"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/service"
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/contracts"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/contracts"
 )
 
 func TestGetBlockByNumber(t *testing.T) {
 
 	fmt.Println(client.GetBlockByNumber(301751))
+}
+func TestGetLatestBlock(t *testing.T) {
+	block, err := client.GetLatestBlock()
+	if err != nil {
+		fmt.Println("errrrrrrrrrrrrrrrrrrrrrrr")
+	} else {
+		fmt.Println(block.Time())
+		fmt.Println(block.Number())
+	}
 }
 func TestGetEvents(t *testing.T) {
 

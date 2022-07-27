@@ -16,12 +16,12 @@ import (
 	"github.com/status-im/keycard-go/hexutils"
 	"github.com/tyler-smith/go-bip39"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/constant"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/models/dto"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/config"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/contracts"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/log"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/utils"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/constant"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/models/dto"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/contracts"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/log"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/utils"
 )
 
 const gasRatio = 1

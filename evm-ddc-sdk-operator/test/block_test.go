@@ -2,12 +2,12 @@ package test
 
 import (
 	"fmt"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/service"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/service"
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/contracts"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/contracts"
 )
 
 func TestGetBlockByNumber(t *testing.T) {

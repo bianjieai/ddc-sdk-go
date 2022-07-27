@@ -1,4 +1,4 @@
-module github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go
+module github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform
 
 go 1.17
 

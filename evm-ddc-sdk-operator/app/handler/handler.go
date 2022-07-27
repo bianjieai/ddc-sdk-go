@@ -8,9 +8,9 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/config"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/contracts"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/log"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/contracts"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/log"
 )
 
 type myString string

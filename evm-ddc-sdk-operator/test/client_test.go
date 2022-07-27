@@ -3,7 +3,7 @@ package test
 import (
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app"
 )
 
 var (

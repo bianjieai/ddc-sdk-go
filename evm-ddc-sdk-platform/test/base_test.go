@@ -6,7 +6,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/constant"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/constant"
 )
 
 func TestEstimateGasLimit(t *testing.T) {

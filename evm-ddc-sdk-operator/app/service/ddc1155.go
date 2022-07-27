@@ -7,9 +7,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/handler"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/log"
-	types2 "github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/types"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/handler"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/log"
+	types2 "github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/types"
 )
 
 type DDC1155Service struct {

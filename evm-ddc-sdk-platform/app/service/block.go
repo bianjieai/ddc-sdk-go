@@ -16,13 +16,13 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient/gethclient"
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/constant"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/handler"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/models/dto"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/config"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/contracts"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/log"
-	types2 "github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/types"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/constant"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/handler"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/models/dto"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/contracts"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/log"
+	types2 "github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/types"
 )
 
 const CtxTimeout = 10 * time.Second
@@ -85,6 +85,10 @@ func NewBlockService() (*BlockService, error) {
 
 func (b *BlockService) GetBlockByNumber(blockNumber int64) (*gethtypes.Block, error) {
 	return b.ethClient.BlockByNumber(context.Background(), big.NewInt(blockNumber))
+}
+
+func (b *BlockService) GetLatestBlock() (*gethtypes.Block, error) {
+	return b.ethClient.BlockByNumber(context.Background(), big.NewInt(int64(gethrpc.LatestBlockNumber)))
 }
 
 func (b *BlockService) GetBlockEvents(blockNumber int64) (*dto.BlockEventBean, error) {
