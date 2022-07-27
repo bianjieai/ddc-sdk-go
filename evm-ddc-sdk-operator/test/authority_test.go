@@ -6,7 +6,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/config"
 )
 
 var authorityService = client.GetAuthorityService()

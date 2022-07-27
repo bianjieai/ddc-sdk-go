@@ -2,13 +2,13 @@ package service
 
 import (
 	"context"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/config"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/log"
-	types2 "github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/types"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/log"
+	types2 "github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/types"
 )
 
 type TxService struct {

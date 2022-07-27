@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/listener"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/models/dto"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/listener"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/models/dto"
 )
 
 var (

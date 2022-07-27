@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 )
 

@@ -6,7 +6,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/config"
 )
 
 var chargeService = client.GetChargeService()

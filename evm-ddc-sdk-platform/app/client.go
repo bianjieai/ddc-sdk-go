@@ -1,11 +1,11 @@
 package app
 
 import (
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/handler"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/listener"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/service"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/config"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/log"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/handler"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/listener"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/service"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/log"
 )
 
 type DDCSdkClient struct {

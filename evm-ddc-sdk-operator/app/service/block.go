@@ -16,13 +16,13 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient/gethclient"
 	gethrpc "github.com/ethereum/go-ethereum/rpc"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/constant"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/handler"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/app/models/dto"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/config"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/contracts"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/log"
-	types2 "github.com/bianjieai/ddc-sdk-go/ddc-sdk-operator-go/pkg/types"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/constant"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/handler"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/app/models/dto"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/contracts"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/log"
+	types2 "github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-operator/pkg/types"
 )
 
 const CtxTimeout = 10 * time.Second

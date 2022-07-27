@@ -5,7 +5,7 @@ import (
 	"crypto/ecdsa"
 	"math/big"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/models/dto"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/models/dto"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
@@ -17,11 +17,11 @@ import (
 	"github.com/status-im/keycard-go/hexutils"
 	"github.com/tyler-smith/go-bip39"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/constant"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/config"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/contracts"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/log"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/utils"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/constant"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/config"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/contracts"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/log"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/utils"
 )
 
 const gasRatio = 1

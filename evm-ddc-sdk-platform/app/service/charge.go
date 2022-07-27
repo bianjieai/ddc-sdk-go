@@ -7,9 +7,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/app/handler"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/log"
-	types2 "github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/types"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/app/handler"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/log"
+	types2 "github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/types"
 )
 
 type ChargeService struct {

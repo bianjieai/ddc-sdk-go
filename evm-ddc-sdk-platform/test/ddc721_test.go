@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"github.com/bianjieai/ddc-sdk-go/ddc-sdk-platform-go/pkg/log"
+	"github.com/bianjieai/ddc-sdk-go/evm-ddc-sdk-platform/pkg/log"
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
